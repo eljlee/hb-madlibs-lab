@@ -59,13 +59,16 @@ def show_madlib_form():
 def show_madlib():
     """Takes user's choices and puts them into a madlib."""
 
-    color = request.args.get("color")
+    hexcode = request.args.get("hexcode")
     noun = request.args.get("noun")
     person = request.args.get("name")
-    adjective = request.args.get("adj")
 
-    return render_template("madlib.html", color=color, noun=noun,
-                           person=person, adjective=adjective)
+    adjectives = request.args.getlist("adj")
+
+    length = len(adjectives)
+
+    return render_template("madlib.html", hexcode=hexcode, noun=noun,
+                           person=person, adjectives=adjectives, length=length)
 
 
 if __name__ == '__main__':

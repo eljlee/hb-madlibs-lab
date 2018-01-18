@@ -1,10 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <title>A Compliment Game</title>
-</head>
-<body>
-     {{ compliment }} {{ person }}
+{% extends 'base.html' %}
+
+{% block inputs %}
+
+     You're {{ compliment }}, {{ person }}:
+     <br><br>
 
     <form action="/game">
     Would you like to play a game? :)
@@ -15,5 +14,4 @@
     <input type="submit" value="Submit">
 </form>
 
-</body>
-</html>
+{% endblock %}
