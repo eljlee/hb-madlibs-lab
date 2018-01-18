@@ -67,7 +67,15 @@ def show_madlib():
 
     length = len(adjectives)
 
-    return render_template("madlib.html", hexcode=hexcode, noun=noun,
+    # make list of all html files
+    # call choice() on list of html files and store as variable
+    # place ^ variable in render_template
+
+    madlibs = ["madlib.html", "madlib2.html", "madlib3.html"]
+
+    random_madlib = choice(madlibs)
+
+    return render_template(random_madlib, hexcode=hexcode, noun=noun,
                            person=person, adjectives=adjectives, length=length)
 
 
